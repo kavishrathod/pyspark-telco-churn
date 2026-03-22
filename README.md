@@ -30,8 +30,13 @@ pyspark-telco-churn/
 │   ├── transform.py                   # T — Clean, encode, engineer, aggregate
 │   └── load.py                        # L — Write to Parquet + CSV + audit log
 ├── output/
-│   ├── parquet/                       # Parquet outputs (columnar, compressed)
-│   ├── csv/                           # CSV outputs (human-readable)
+│   ├── csv/                           # CSV outputs (human-readable, pushed to GitHub)
+│   │   ├── telco_churn_cleaned/       # Full cleaned dataset
+│   │   ├── churn_by_contract/
+│   │   ├── churn_by_tenure/
+│   │   ├── revenue_by_payment/
+│   │   └── spend_by_internet/
+│   ├── parquet/                       # Parquet outputs (generated locally, not in repo)
 │   └── logs/
 │       └── load_log.json              # Pipeline audit log
 ├── pipeline.py                        # Main orchestrator
@@ -128,12 +133,19 @@ pyspark-telco-churn/
 ### 1. Prerequisites
 ```bash
 # Check Java (required for Spark)
-java -version   # Need Java 8 or 11
+java -version   # Need Java 11
 
 # Install Java 11 if needed
-sudo apt install openjdk-11-jdk   # Linux/WSL
-brew install openjdk@11           # macOS
+# Windows  → https://adoptium.net/temurin/releases/?version=11 (download .msi)
+# Linux    → sudo apt install openjdk-11-jdk
+# macOS    → brew install openjdk@11
 ```
+
+**Windows only — additional setup required:**
+1. Download `winutils.exe` and `hadoop.dll` from [cdarlint/winutils](https://github.com/cdarlint/winutils) → `hadoop-3.3.5/bin/`
+2. Place both files in `C:\hadoop\bin\`
+3. Set environment variable: `HADOOP_HOME = C:\hadoop`
+4. Add `C:\hadoop\bin` to your system `PATH`
 
 ### 2. Install Python dependencies
 ```bash
