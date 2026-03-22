@@ -1,0 +1,5 @@
+tenure_group,total_customers,churned,churn_rate_%
+0-1 Year,2186,1037,47.44
+1-2 Years,1024,294,28.71
+2-4 Years,1594,325,20.39
+4+ Years,2239,213,9.51

@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-output/
+output/parquet/
 .DS_Store
 *.egg-info/
 .env

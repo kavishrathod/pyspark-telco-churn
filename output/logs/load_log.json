@@ -1,0 +1,16 @@
+{
+  "pipeline": "pyspark-telco-churn",
+  "timestamp": "2026-03-22 22:09:28",
+  "rows_loaded": 7043,
+  "aggregations_saved": [
+    "churn_by_contract",
+    "churn_by_tenure",
+    "revenue_by_payment",
+    "spend_by_internet"
+  ],
+  "duration_seconds": 60.41,
+  "storage_format": [
+    "Parquet",
+    "CSV"
+  ]
+}

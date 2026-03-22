@@ -1,0 +1,5 @@
+PaymentMethod,total_revenue,avg_monthly_charges,customers
+Electronic check,4944903.25,76.26,2365
+Bank transfer (automatic),4751069.0,67.19,1544
+Credit card (automatic),4672987.9,66.51,1522
+Mailed check,1702548.6,43.92,1612
