@@ -8,6 +8,13 @@ Rebuilt for scalability using Apache Spark.
 Author: Kavish Rathod
 """
 
+import os
+import time
+
+# ── Windows fix: set HADOOP_HOME programmatically ──
+os.environ["HADOOP_HOME"] = os.path.dirname(os.path.abspath(__file__))
+os.environ["hadoop.home.dir"] = os.environ["HADOOP_HOME"]
+
 import time
 from pyspark.sql import SparkSession
 from src.extract import extract
