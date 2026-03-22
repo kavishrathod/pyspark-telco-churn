@@ -81,15 +81,45 @@ pyspark-telco-churn/
 
 ---
 
-## 📊 Key Insights
+## 📊 Key Insights from Pipeline Run
 
 | Metric | Value |
 |---|---|
 | Total Records | 7,043 |
 | Churn Rate | ~26% |
-| TotalCharges blanks fixed | ~11 records |
+| TotalCharges blanks fixed | 11 records |
 | Features engineered | 2 (`tenure_group`, `avg_monthly_spend`) |
 | Aggregations generated | 4 |
+
+### Churn by Contract Type
+| Contract | Customers | Churned | Churn Rate |
+|---|---|---|---|
+| Month-to-month | 3,875 | 1,655 | **42.71%** |
+| One year | 1,473 | 166 | 11.27% |
+| Two year | 1,695 | 48 | 2.83% |
+
+### Churn by Tenure Group
+| Tenure Group | Customers | Churned | Churn Rate |
+|---|---|---|---|
+| 0-1 Year | 2,186 | 1,037 | **47.44%** |
+| 1-2 Years | 1,024 | 294 | 28.71% |
+| 2-4 Years | 1,594 | 325 | 20.39% |
+| 4+ Years | 2,239 | 213 | 9.51% |
+
+### Revenue by Payment Method
+| Payment Method | Total Revenue | Avg Monthly | Customers |
+|---|---|---|---|
+| Electronic check | ₹49,44,903 | ₹76.26 | 2,365 |
+| Bank transfer | ₹47,51,069 | ₹67.19 | 1,544 |
+| Credit card | ₹46,72,988 | ₹66.51 | 1,522 |
+| Mailed check | ₹17,02,549 | ₹43.92 | 1,612 |
+
+### Spend by Internet Service
+| Internet Service | Avg Spend | Customers | Churn Rate |
+|---|---|---|---|
+| Fiber optic | ₹91.46 | 3,096 | **41.89%** |
+| DSL | ₹58.12 | 2,421 | 18.96% |
+| No internet | ₹21.13 | 1,526 | 7.40% |
 
 ---
 
